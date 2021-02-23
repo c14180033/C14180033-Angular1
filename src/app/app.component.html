@@ -1,4 +1,24 @@
-<hello name="{{ name }}"></hello>
-<p>
-  Start editing to see some magic happen :)
-</p>
+<ng-template *ngIf="turn; then showPlayer1; else showPlayer2">
+</ng-template>
+
+<ng-template #showPlayer1>
+  <h3>
+    Player 1's Turn!
+  </h3>
+</ng-template>
+
+<ng-template #showPlayer2>
+  <h3>
+    Player 2's Turn!
+  </h3>
+</ng-template>
+Baris: <input [(ngModel)]="baris" type="text"/> <br/>
+Kolom: <input [(ngModel)]="kolom" type="text"/> <br/>
+<button (click)="Submit()">Submit</button>
+<div *ngFor="let barisBoard of board">
+  <span *ngFor="let kolomBoard of barisBoard">
+    {{kolomBoard}}
+  </span>
+</div>
+
+{{pesan}}
